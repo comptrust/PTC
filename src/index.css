@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #080c10;
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle honeycomb carbon pattern inspired by the official business card */
+.bg-honeycomb {
+  background-color: #090d12;
+  background-image: radial-gradient(rgba(34, 197, 94, 0.08) 1px, transparent 1px), radial-gradient(rgba(34, 197, 94, 0.04) 1px, #090d12 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.45);
+}
+
+.box-glow {
+  box-shadow: 0 0 25px -5px rgba(34, 197, 94, 0.25);
+}
+
+.border-racing-green {
+  border-color: rgba(34, 197, 94, 0.3);
+}

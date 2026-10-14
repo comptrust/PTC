@@ -1,0 +1,6 @@
+{
+  "name": "Prosperity Tire Center",
+  "description": "Prosperity Tire Center - Official website with green branding for Maryland & Washington DC locations. New & used tires, mounting, computerized balancing, laser alignment, coupons, and online service booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
