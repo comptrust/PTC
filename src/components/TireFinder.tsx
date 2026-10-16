@@ -94,76 +94,76 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
   };
 
   return (
-    <div className="bg-slate-900 border border-emerald-950 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-7xl mx-auto -mt-8 relative z-20">
+    <div className="bg-slate-900 border border-emerald-950/80 rounded-2xl shadow-xl p-4 sm:p-6 max-w-7xl mx-auto relative z-20">
       {/* Title & Mode Switcher */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 pb-4 border-b border-slate-800">
         <div>
-          <span className="text-xs uppercase tracking-widest text-emerald-400 font-bold font-heading">
+          <span className="text-[11px] uppercase tracking-widest text-emerald-400 font-bold font-heading">
             {language === 'en' ? 'Interactive Tire Fitment Engine' : 'Selector de Llantas Interactivo'}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black font-heading text-white uppercase italic tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-black font-heading text-white uppercase italic tracking-tight">
             {t.shopTires}
           </h2>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex items-center gap-1 p-1 bg-slate-950 rounded-lg border border-slate-800">
+        <div className="flex items-center gap-1 p-1 bg-slate-950 rounded-lg border border-slate-800 self-stretch sm:self-auto">
           <button
             type="button"
             onClick={() => setActiveTab('size')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-md uppercase tracking-wider transition-colors cursor-pointer ${
+            className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-md uppercase tracking-wider transition-colors cursor-pointer ${
               activeTab === 'size'
                 ? 'bg-emerald-600 text-slate-950 shadow-sm'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            <Disc className="w-4 h-4" />
+            <Disc className="w-3.5 h-3.5" />
             <span>{t.searchBySize}</span>
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab('vehicle')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-md uppercase tracking-wider transition-colors cursor-pointer ${
+            className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-md uppercase tracking-wider transition-colors cursor-pointer ${
               activeTab === 'vehicle'
                 ? 'bg-emerald-600 text-slate-950 shadow-sm'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            <Car className="w-4 h-4" />
+            <Car className="w-3.5 h-3.5" />
             <span>{t.searchByVehicle}</span>
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab('brand')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-md uppercase tracking-wider transition-colors cursor-pointer ${
+            className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-md uppercase tracking-wider transition-colors cursor-pointer ${
               activeTab === 'brand'
                 ? 'bg-emerald-600 text-slate-950 shadow-sm'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            <Layers className="w-4 h-4" />
+            <Layers className="w-3.5 h-3.5" />
             <span>{t.searchByBrand}</span>
           </button>
         </div>
       </div>
 
       {/* Tab Panels */}
-      <div className="pt-6">
+      <div className="pt-4">
         {/* TAB 1: Search by Size */}
         {activeTab === 'size' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+          <div className="space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-end">
+              <div className="lg:col-span-3">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                   1. {t.width} (mm)
                 </label>
                 <select
                   aria-label="Tire width"
                   value={selectedWidth}
                   onChange={(e) => setSelectedWidth(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3.5 py-3 text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3 py-2.5 text-xs sm:text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
                 >
                   <option value="">{language === 'en' ? 'Select Width (e.g. 205)' : 'Seleccionar Ancho'}</option>
                   {widths.map((w) => (
@@ -174,15 +174,15 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                 </select>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              <div className="lg:col-span-3">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                   2. {t.aspectRatio} (%)
                 </label>
                 <select
                   aria-label="Tire aspect ratio"
                   value={selectedRatio}
                   onChange={(e) => setSelectedRatio(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3.5 py-3 text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3 py-2.5 text-xs sm:text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
                 >
                   <option value="">{language === 'en' ? 'Select Profile (e.g. 55)' : 'Seleccionar Perfil'}</option>
                   {ratios.map((r) => (
@@ -193,15 +193,15 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                 </select>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              <div className="lg:col-span-3">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                   3. {t.rimDiameter} (inches)
                 </label>
                 <select
                   aria-label="Tire rim diameter"
                   value={selectedRim}
                   onChange={(e) => setSelectedRim(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3.5 py-3 text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3 py-2.5 text-xs sm:text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
                 >
                   <option value="">{language === 'en' ? 'Select Rim (e.g. 16")' : 'Seleccionar Rin'}</option>
                   {rims.map((rim) => (
@@ -211,59 +211,58 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                   ))}
                 </select>
               </div>
+
+              <div className="lg:col-span-3 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleSizeSearch}
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+                >
+                  <Search className="w-3.5 h-3.5" />
+                  <span>{t.findTiresBtn}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  title={t.resetFilters}
+                  className="p-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-all cursor-pointer shrink-0"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
 
             {/* Quick Popular Size Pills */}
             <div className="flex items-center gap-2 flex-wrap pt-1 text-xs text-slate-400">
-              <span className="font-semibold text-slate-300">{language === 'en' ? 'Common Sizes:' : 'Medidas Populares:'}</span>
-              {COMMON_TIRE_SIZES.slice(0, 6).map((sz) => (
+              <span className="font-semibold text-slate-300 text-[11px]">{language === 'en' ? 'Quick Sizes:' : 'Medidas Rápidas:'}</span>
+              {COMMON_TIRE_SIZES.slice(0, 7).map((sz) => (
                 <button
                   key={sz}
                   type="button"
                   onClick={() => handleQuickSize(sz)}
-                  className="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 hover:border-emerald-500/80 hover:text-emerald-400 text-slate-300 font-mono-num transition-colors cursor-pointer"
+                  className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 hover:border-emerald-500/80 hover:text-emerald-400 text-slate-300 font-mono-num text-[11px] transition-colors cursor-pointer"
                 >
                   {sz}
                 </button>
               ))}
-            </div>
-
-            {/* Search and Reset Buttons */}
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                type="button"
-                onClick={handleSizeSearch}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-heading font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-950/50 transition-all cursor-pointer"
-              >
-                <Search className="w-4 h-4" />
-                <span>{t.findTiresBtn}</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleReset}
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer"
-              >
-                <RotateCcw className="w-4 h-4" />
-                <span>{t.resetFilters}</span>
-              </button>
             </div>
           </div>
         )}
 
         {/* TAB 2: Search by Vehicle */}
         {activeTab === 'vehicle' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+          <div className="space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-end">
+              <div className="lg:col-span-2">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                   1. Year
                 </label>
                 <select
                   aria-label="Vehicle year"
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3.5 py-3 text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3 py-2.5 text-xs sm:text-sm text-white font-mono-num font-semibold focus:outline-none transition-colors cursor-pointer"
                 >
                   {[2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2012, 2010].map((yr) => (
                     <option key={yr} value={yr}>
@@ -273,8 +272,8 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                 </select>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              <div className="lg:col-span-3">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                   2. Make
                 </label>
                 <select
@@ -287,7 +286,7 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                       setSelectedModel(POPULAR_VEHICLES[make].models[0]);
                     }
                   }}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3.5 py-3 text-sm text-white font-semibold focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3 py-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none transition-colors cursor-pointer"
                 >
                   {VEHICLE_MAKES.map((mk) => (
                     <option key={mk} value={mk}>
@@ -297,15 +296,15 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                 </select>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              <div className="lg:col-span-3">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                   3. Model
                 </label>
                 <select
                   aria-label="Vehicle model"
                   value={selectedModel}
                   onChange={(e) => setSelectedModel(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3.5 py-3 text-sm text-white font-semibold focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3 py-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none transition-colors cursor-pointer"
                 >
                   {(POPULAR_VEHICLES[selectedMake]?.models || ['Base Model', 'Sedan', 'SUV']).map((mdl) => (
                     <option key={mdl} value={mdl}>
@@ -314,34 +313,34 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                   ))}
                 </select>
               </div>
-            </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                type="button"
-                onClick={handleVehicleSearch}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-heading font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-950/50 transition-all cursor-pointer"
-              >
-                <Search className="w-4 h-4" />
-                <span>{language === 'en' ? `Show Tires for ${selectedYear} ${selectedMake} ${selectedModel}` : 'Buscar Llantas para este Vehículo'}</span>
-              </button>
+              <div className="lg:col-span-4 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleVehicleSearch}
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+                >
+                  <Search className="w-3.5 h-3.5" />
+                  <span>{language === 'en' ? `Show Tires for ${selectedMake}` : 'Buscar por Vehículo'}</span>
+                </button>
 
-              <button
-                type="button"
-                onClick={handleReset}
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer"
-              >
-                <RotateCcw className="w-4 h-4" />
-                <span>{t.resetFilters}</span>
-              </button>
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  title={t.resetFilters}
+                  className="p-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-all cursor-pointer shrink-0"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           </div>
         )}
 
         {/* TAB 3: Search by Brand */}
         {activeTab === 'brand' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+          <div className="space-y-3">
+            <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-2">
               {brands.map((b) => {
                 const isSelected = selectedBrand === b;
                 return (
@@ -352,36 +351,35 @@ export const TireFinder: React.FC<TireFinderProps> = ({ language, onFilterApply 
                       setSelectedBrand(isSelected ? '' : b);
                       onFilterApply({ brand: isSelected ? undefined : b });
                     }}
-                    className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1.5 ${
+                    className={`py-2 px-2 rounded-lg border text-center transition-all cursor-pointer flex items-center justify-center gap-1 ${
                       isSelected
-                        ? 'bg-emerald-950/80 border-emerald-500 text-emerald-400 font-bold shadow-lg shadow-emerald-950/50'
+                        ? 'bg-emerald-950 border-emerald-500 text-emerald-400 font-bold shadow-md'
                         : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700 hover:text-white'
                     }`}
                   >
-                    <span className="font-heading font-black uppercase tracking-wider text-sm">{b}</span>
-                    {isSelected && <span className="text-[10px] text-emerald-400 font-bold flex items-center gap-1"><Check className="w-3 h-3" /> Selected</span>}
+                    <span className="font-heading font-bold uppercase tracking-wider text-xs truncate">{b}</span>
                   </button>
                 );
               })}
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center justify-end gap-2 pt-1">
               <button
                 type="button"
                 onClick={handleBrandSearch}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-heading font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-950/50 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
               >
-                <Search className="w-4 h-4" />
+                <Search className="w-3.5 h-3.5" />
                 <span>{language === 'en' ? 'Filter by Selected Brand' : 'Filtrar por Marca'}</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleReset}
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                title={t.resetFilters}
+                className="p-2 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-all cursor-pointer shrink-0"
               >
-                <RotateCcw className="w-4 h-4" />
-                <span>{t.resetFilters}</span>
+                <RotateCcw className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>

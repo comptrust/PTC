@@ -13,6 +13,7 @@ import { ContactPage } from './components/ContactPage';
 import { MobileTruckSection } from './components/MobileTruckSection';
 import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
+import { HomeFeatured } from './components/HomeFeatured';
 import { AppointmentModal } from './components/AppointmentModal';
 import { TIRE_PRODUCTS, LOCATIONS, SERVICES, TRANSLATIONS, GOOGLE_REVIEWS } from './data/websiteData';
 import { TireProduct, LocationInfo, ServiceItem, Language, CartItem } from './types';
@@ -159,7 +160,7 @@ export default function App() {
       />
 
       {/* Main Multi-Page Content Area */}
-      <main className="flex-1">
+      <main className="flex-1 pb-16">
         {/* ========================================================= */}
         {/* PAGE 1: HOME                                              */}
         {/* ========================================================= */}
@@ -180,7 +181,7 @@ export default function App() {
             />
 
             {/* Interactive Tire Finder */}
-            <div className="px-4">
+            <div className="px-4 relative z-20 py-2">
               <TireFinder
                 language={language}
                 onFilterApply={(filters) => {
@@ -190,133 +191,14 @@ export default function App() {
               />
             </div>
 
-            {/* Tire Catalog Featured Preview */}
-            <div className="pt-8">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pb-4">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 font-heading">
-                    Current Featured Stock
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-black font-heading text-white uppercase italic">
-                    Popular Tires In Stock Today
-                  </h2>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('shop')}
-                  className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 uppercase tracking-wider font-heading cursor-pointer"
-                >
-                  <span>View All 50+ Tires</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-
-              <TireCatalog
-                tires={TIRE_PRODUCTS.slice(0, 6)}
-                language={language}
-                onAddToCart={handleAddToCart}
-                onBookWithTire={handleBookWithTire}
-                activeFilters={activeFilters}
-                setActiveFilters={setActiveFilters}
-              />
-            </div>
-
-            {/* Official Brand Showcase with Flyer and Digital Business Card */}
-            <BrandShowcase
+            {/* Streamlined, high-converting homepage featured overview */}
+            <HomeFeatured
               language={language}
-              onBookService={() => {
-                setSelectedBookingService(null);
-                setIsScheduleOpen(true);
-              }}
-              onClaimPromo={() => {
-                handleApplyCoupon('GAS20NEW');
-              }}
-            />
-
-            {/* Core Automotive Services Preview */}
-            <ServicesSection
-              language={language}
+              onAddToCart={handleAddToCart}
+              onBookWithTire={handleBookWithTire}
               onBookService={handleBookService}
-            />
-
-            {/* The Prosperity Mobile Tire Truck (Ford E-Series Mobile Unit) */}
-            <MobileTruckSection
-              language={language}
-              onBookMobile={() => setIsScheduleOpen(true)}
-            />
-
-            {/* Verified Google Reviews Strip on Homepage */}
-            <section className="py-16 bg-slate-900/60 border-y border-slate-800">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 text-emerald-400 text-xs font-bold uppercase tracking-wider font-heading mb-1">
-                      <Star className="w-4 h-4 fill-emerald-400" />
-                      <span>Verified Google Business Reviews</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-black font-heading text-white uppercase italic tracking-tight">
-                      What DMV Drivers Say About Us
-                    </h2>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab('reviews')}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-heading font-black text-xs uppercase tracking-wider cursor-pointer shadow-md transition-colors"
-                  >
-                    <span>Read All {GOOGLE_REVIEWS.length} Reviews</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {GOOGLE_REVIEWS.slice(0, 3).map((rev) => (
-                    <div
-                      key={rev.id}
-                      className="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 flex flex-col justify-between"
-                    >
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <div className="font-bold text-white text-sm font-heading">{rev.author}</div>
-                          <span className="text-[11px] text-slate-400">{rev.date}</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-amber-400">
-                          {[...Array(rev.rating)].map((_, i) => (
-                            <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                          ))}
-                        </div>
-                        <p className="text-xs text-slate-300 leading-relaxed italic">
-                          "{rev.text}"
-                        </p>
-                      </div>
-
-                      {rev.ownerResponse && (
-                        <div className="pt-3 border-t border-slate-900 text-[11px] text-emerald-400 font-medium">
-                          ✓ Owner replied: "{rev.ownerResponse.text}"
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Official Coupons & Deals Strip */}
-            <CouponsSection
-              language={language}
-              onApplyCoupon={handleApplyCoupon}
-            />
-
-            {/* Regional Service Centers (Edgewater, Brooklyn, Rockville, DC) */}
-            <LocationsSection
-              language={language}
               onSelectLocationForBooking={handleSelectLocationForBooking}
-            />
-
-            {/* About & Trust */}
-            <AboutSection
-              language={language}
-              onBookService={() => setIsScheduleOpen(true)}
+              setActiveTab={setActiveTab}
             />
           </>
         )}

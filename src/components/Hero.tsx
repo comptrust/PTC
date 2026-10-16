@@ -41,7 +41,7 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Main Hero Viewport */}
-      <div className="relative min-h-[580px] lg:min-h-[640px] flex items-center">
+      <div className="relative flex items-center">
         {/* Background Image: The imported actual Storefront Building Photo */}
         <div className="absolute inset-0 z-0">
           <img
@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
             {/* Tagline kicker */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-bold tracking-wider uppercase font-heading">
