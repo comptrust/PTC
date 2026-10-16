@@ -51,6 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ language, onNavigate, onOpenSche
               { id: 'home', label: language === 'en' ? 'Home Page' : 'Inicio' },
               { id: 'shop', label: language === 'en' ? 'Shop Tires By Size' : 'Catálogo de Llantas' },
               { id: 'services', label: language === 'en' ? 'Automotive Services' : 'Servicios de Taller' },
+              { id: 'mobile-truck', label: language === 'en' ? 'Mobile Tire Truck' : 'Camión Móvil a Domicilio' },
               { id: 'used-tires', label: language === 'en' ? 'Inspected Used Tires' : 'Llantas Usadas' },
               { id: 'coupons', label: language === 'en' ? 'Coupons & Gas Cards' : 'Cupones y Ofertas' },
               { id: 'locations', label: language === 'en' ? 'Store Locations' : 'Nuestras Sedes' },

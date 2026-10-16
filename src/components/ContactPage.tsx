@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, CheckCircle2, AlertTriangle, HelpCircle, User, Car, Calendar } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, CheckCircle2, AlertTriangle, HelpCircle, User, Car, Calendar, Building } from 'lucide-react';
 import { LOCATIONS, SERVICES } from '../data/websiteData';
 import { Language } from '../types';
+import buildingImg from '../assets/images/storefront_6975_building.jpg';
 
 interface ContactPageProps {
   language: Language;
@@ -209,6 +210,31 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language, onOpenSchedu
 
           {/* Right Column: All 4 Branch Quick Dials & Emergency Advice */}
           <div className="lg:col-span-5 space-y-6">
+            {/* Flagship Building Feature Card */}
+            <div className="bg-slate-900 border-2 border-emerald-500/50 rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative h-48 w-full overflow-hidden bg-slate-950">
+                <img
+                  src={buildingImg}
+                  alt="Prosperity Tire Center 6975 Baltimore Annapolis Blvd, Brooklyn MD"
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3 bg-slate-950/90 border border-emerald-500/80 rounded-xl px-3 py-1 text-[11px] font-black text-emerald-400 font-heading">
+                  Flagship Storefront · #6975
+                </div>
+              </div>
+              <div className="p-4 bg-slate-900 space-y-1 text-xs">
+                <div className="text-sm font-bold text-white font-heading">
+                  6975 Baltimore Annapolis Blvd, Brooklyn, MD 21225
+                </div>
+                <div className="text-slate-300 font-mono-num flex items-center justify-between pt-1">
+                  <span className="text-emerald-400 font-bold">Direct: (443) 548-1002</span>
+                  <span className="text-slate-400">Walk-ins Welcome</span>
+                </div>
+              </div>
+            </div>
+
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-7 space-y-4">
               <h3 className="text-base font-bold uppercase tracking-wider text-white font-heading flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-emerald-400" />

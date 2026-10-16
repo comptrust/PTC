@@ -10,18 +10,19 @@ import { LocationsSection } from './components/LocationsSection';
 import { AboutSection } from './components/AboutSection';
 import { ReviewsPage } from './components/ReviewsPage';
 import { ContactPage } from './components/ContactPage';
+import { MobileTruckSection } from './components/MobileTruckSection';
 import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
 import { AppointmentModal } from './components/AppointmentModal';
 import { TIRE_PRODUCTS, LOCATIONS, SERVICES, TRANSLATIONS, GOOGLE_REVIEWS } from './data/websiteData';
 import { TireProduct, LocationInfo, ServiceItem, Language, CartItem } from './types';
-import { Phone, Calendar, ShieldCheck, Fuel, ArrowRight, Wrench, Search, MapPin, Mail, Clock, Star, MessageSquare } from 'lucide-react';
+import { Phone, Calendar, ShieldCheck, Fuel, ArrowRight, Wrench, Search, MapPin, Mail, Clock, Star, MessageSquare, Truck } from 'lucide-react';
 
 export default function App() {
   // Sync page routing with URL hash for true multi-page navigation
   const getInitialTab = (): string => {
     const hash = window.location.hash.replace('#/', '').replace('#', '');
-    const validTabs = ['home', 'shop', 'services', 'used-tires', 'coupons', 'locations', 'reviews', 'about', 'contact'];
+    const validTabs = ['home', 'shop', 'services', 'mobile-truck', 'used-tires', 'coupons', 'locations', 'reviews', 'about', 'contact'];
     return validTabs.includes(hash) ? hash : 'home';
   };
 
@@ -43,7 +44,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#/', '').replace('#', '');
-      const validTabs = ['home', 'shop', 'services', 'used-tires', 'coupons', 'locations', 'reviews', 'about', 'contact'];
+      const validTabs = ['home', 'shop', 'services', 'mobile-truck', 'used-tires', 'coupons', 'locations', 'reviews', 'about', 'contact'];
       if (validTabs.includes(hash)) {
         setActiveTabState(hash);
       } else if (!hash) {
@@ -238,6 +239,12 @@ export default function App() {
               onBookService={handleBookService}
             />
 
+            {/* The Prosperity Mobile Tire Truck (Ford E-Series Mobile Unit) */}
+            <MobileTruckSection
+              language={language}
+              onBookMobile={() => setIsScheduleOpen(true)}
+            />
+
             {/* Verified Google Reviews Strip on Homepage */}
             <section className="py-16 bg-slate-900/60 border-y border-slate-800">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -392,6 +399,28 @@ export default function App() {
             <ServicesSection
               language={language}
               onBookService={handleBookService}
+            />
+          </div>
+        )}
+
+        {/* ========================================================= */}
+        {/* PAGE: MOBILE TRUCK (DEDICATED FLEET PAGE)                 */}
+        {/* ========================================================= */}
+        {activeTab === 'mobile-truck' && (
+          <div className="py-8 space-y-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center gap-2 text-xs text-slate-400 mb-4">
+                <button type="button" onClick={() => setActiveTab('home')} className="hover:text-emerald-400">
+                  Home
+                </button>
+                <span>/</span>
+                <span className="text-emerald-400 font-bold">Mobile Tire Service Truck</span>
+              </div>
+            </div>
+
+            <MobileTruckSection
+              language={language}
+              onBookMobile={() => setIsScheduleOpen(true)}
             />
           </div>
         )}

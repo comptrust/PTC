@@ -2,6 +2,8 @@ import React from 'react';
 import { Disc, Compass, Wrench, Gauge, ShieldCheck, BatteryCharging, ShieldAlert, Clock, ArrowRight, Check } from 'lucide-react';
 import { SERVICES, TRANSLATIONS } from '../data/websiteData';
 import { Language, ServiceItem } from '../types';
+import balancingImg from '../assets/images/tire_service_balancing_1791970740895.jpg';
+import warehouseImg from '../assets/images/used_tires_warehouse_1791970740744.jpg';
 
 interface ServicesSectionProps {
   language: Language;
@@ -49,7 +51,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ language, onBo
           <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col group hover:border-emerald-500/50 transition-colors">
             <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <img
-                src="/src/assets/images/tire_service_balancing_1791970740895.jpg"
+                src={balancingImg}
                 alt="Computerized Wheel Balancing Workshop"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -91,7 +93,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ language, onBo
           <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col group hover:border-emerald-500/50 transition-colors">
             <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <img
-                src="/src/assets/images/used_tires_warehouse_1791970740744.jpg"
+                src={warehouseImg}
                 alt="Inspected Used Tires Warehouse"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"

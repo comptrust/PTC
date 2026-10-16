@@ -53,7 +53,28 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
     setIsSubmitted(true);
   };
 
-  const selectedLoc = LOCATIONS.find((l) => l.id === selectedLocationId) || LOCATIONS[0];
+  const selectedLoc =
+    selectedLocationId === 'mobile-truck'
+      ? {
+          id: 'mobile-truck',
+          name: '🚚 Prosperity Mobile Truck (We Come To You)',
+          address: 'Your Home Driveway, Office, or Roadside (DMV)',
+          city: 'DC & Maryland Service Coverage',
+          state: 'MD/DC',
+          zip: '',
+          phone: '8883759048',
+          phoneDisplay: '(888) 375-9048',
+          tollFree: '(888) 375-9048',
+          hoursWeekday: '8:30 AM - 6:30 PM',
+          hoursSaturday: '8:30 AM - 6:30 PM',
+          hoursSunday: '9:00 AM - 5:00 PM',
+          manager: 'Alexy / Mobile Fleet Coordinator',
+          googleMapsUrl: '',
+          coordinates: { lat: 38.924, lng: -76.979 },
+          features: ['On-Site Mounting', 'Computerized Balancing', 'Flat Repair', 'Driveway Service'],
+        }
+      : LOCATIONS.find((l) => l.id === selectedLocationId) || LOCATIONS[0];
+
   const selectedServ = SERVICES.find((s) => s.id === selectedServiceId) || SERVICES[0];
 
   return (
@@ -159,6 +180,9 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   onChange={(e) => setSelectedLocationId(e.target.value)}
                   className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-lg px-3 py-2.5 text-xs text-white font-medium focus:outline-none cursor-pointer"
                 >
+                  <option value="mobile-truck">
+                    🚚 Prosperity Mobile Service Truck (We Come To You!)
+                  </option>
                   {LOCATIONS.map((loc) => (
                     <option key={loc.id} value={loc.id}>
                       {loc.name} ({loc.city}, {loc.state})

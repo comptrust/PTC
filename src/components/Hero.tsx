@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, ShieldCheck, Sparkles, Award, MapPin, Fuel, Wrench, CheckCircle2 } from 'lucide-react';
 import { TRANSLATIONS } from '../data/websiteData';
 import { Language } from '../types';
+import buildingImg from '../assets/images/storefront_6975_building.jpg';
 
 interface HeroProps {
   language: Language;
@@ -41,12 +42,12 @@ export const Hero: React.FC<HeroProps> = ({
 
       {/* Main Hero Viewport */}
       <div className="relative min-h-[580px] lg:min-h-[640px] flex items-center">
-        {/* Background Image with High Contrast Automotive Dark Scrim */}
+        {/* Background Image: The imported actual Storefront Building Photo */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/hero_prosperity_tires_1791970739401.jpg"
-            alt="Prosperity Tire Center modern workshop and showroom"
-            className="w-full h-full object-cover object-center filter brightness-[0.45] contrast-[1.05]"
+            src={buildingImg}
+            alt="Prosperity Tire Center Flagship Storefront 6975 Baltimore Annapolis Blvd, Brooklyn MD"
+            className="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
             referrerPolicy="no-referrer"
           />
           {/* Gradients to blend into slate-950 */}
@@ -57,8 +58,8 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <div className="max-w-2xl space-y-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
             {/* Tagline kicker */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-bold tracking-wider uppercase font-heading">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -114,7 +115,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300 font-medium">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Mounting & Balancing</span>
+                <span>Mounting &amp; Balancing</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -122,11 +123,50 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Flat Tire Plug & Patch</span>
+                <span>Flat Tire Plug &amp; Patch</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Inspected Used Tires</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Actual Storefront Building Card */}
+          <div className="lg:col-span-5 block mt-6 lg:mt-0">
+            <div className="bg-slate-900/90 border-2 border-emerald-500/60 rounded-3xl p-5 shadow-2xl backdrop-blur-md space-y-3">
+              <div className="relative h-64 sm:h-72 lg:h-64 rounded-2xl overflow-hidden border border-emerald-500/40 bg-slate-950 group">
+                <img
+                  src={buildingImg}
+                  alt="Prosperity Tire Center 6975 Baltimore Annapolis Blvd, Brooklyn MD"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute top-3 left-3 bg-slate-950/90 border border-emerald-500/80 rounded-xl px-3 py-1 text-[11px] font-black text-emerald-400 font-heading">
+                  Flagship Storefront · #6975
+                </div>
+                <div className="absolute bottom-3 left-3 right-3 bg-slate-950/90 border border-slate-800 rounded-xl p-3 backdrop-blur-sm">
+                  <div className="text-xs font-black uppercase text-white font-heading">
+                    6975 Baltimore Annapolis Blvd
+                  </div>
+                  <div className="text-[11px] text-emerald-300 font-mono-num font-bold mt-0.5 flex items-center justify-between">
+                    <span>Brooklyn, MD 21225</span>
+                    <span>(443) 548-1002</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between text-xs pt-1 px-1 text-slate-300">
+                <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Open Today · Express Bays
+                </span>
+                <button
+                  type="button"
+                  onClick={onBookService}
+                  className="text-white hover:text-emerald-400 font-bold underline cursor-pointer"
+                >
+                  Book Appointment →
+                </button>
               </div>
             </div>
           </div>

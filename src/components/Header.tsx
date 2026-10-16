@@ -32,6 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'home', label: language === 'en' ? 'Home' : 'Inicio' },
     { id: 'shop', label: language === 'en' ? 'Shop Tires' : 'Llantas' },
     { id: 'services', label: language === 'en' ? 'Services' : 'Servicios' },
+    { id: 'mobile-truck', label: language === 'en' ? 'Mobile Truck' : 'Camión Móvil' },
     { id: 'used-tires', label: language === 'en' ? 'Used Tires' : 'Llantas Usadas' },
     { id: 'coupons', label: language === 'en' ? 'Coupons' : 'Cupones' },
     { id: 'locations', label: language === 'en' ? 'Locations' : 'Sedes' },
@@ -121,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Navigation Row (Strict Top Bar Contract) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-6">
-        {/* Zone 1: Single element Brand logo (Only logo, no border, bigger) */}
+        {/* Zone 1: Single element Brand Logo (Pure PNG emblem, no text after logo) */}
         <button
           type="button"
           onClick={() => {
@@ -131,7 +132,7 @@ export const Header: React.FC<HeaderProps> = ({
           className="text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl group shrink-0 cursor-pointer"
           title="Prosperity Tire Center - Home"
         >
-          <ProsperityLogo size="md" />
+          <ProsperityLogo size="md" allowUpload={false} />
         </button>
 
         {/* Zone 2: Single-line Navigation Links */}

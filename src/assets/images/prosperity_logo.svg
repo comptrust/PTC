@@ -1,0 +1,322 @@
+
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Realistic Tire Rubber Radial Shading -->
+    <radialGradient id="tireBody" cx="50%" cy="48%" r="48%" fx="45%" fy="42%">
+      <stop offset="0%" stop-color="#2a303b" />
+      <stop offset="25%" stop-color="#191d24" />
+      <stop offset="55%" stop-color="#0f1217" />
+      <stop offset="85%" stop-color="#14171d" />
+      <stop offset="100%" stop-color="#08090c" />
+    </radialGradient>
+
+    <!-- Chrome Wheel Rim Gradient (Bottom Arc) -->
+    <linearGradient id="chromeWheel" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="18%" stop-color="#cbd5e1" />
+      <stop offset="35%" stop-color="#64748b" />
+      <stop offset="50%" stop-color="#f8fafc" />
+      <stop offset="68%" stop-color="#94a3b8" />
+      <stop offset="85%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Highway Green Ribbon Gradient -->
+    <linearGradient id="roadGreen" x1="80%" y1="70%" x2="20%" y2="20%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="25%" stop-color="#059669" />
+      <stop offset="55%" stop-color="#10b981" />
+      <stop offset="80%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#16a34a" />
+    </linearGradient>
+
+    <!-- Leaf Body Gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14532d" />
+      <stop offset="30%" stop-color="#16a34a" />
+      <stop offset="65%" stop-color="#22c55e" />
+      <stop offset="90%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#86efac" />
+    </linearGradient>
+
+    <!-- 3D Chrome Horizon Gradient for PROSPERITY text -->
+    <linearGradient id="chromeHorizon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#f1f5f9" />
+      <stop offset="48%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#475569" />
+      <stop offset="54%" stop-color="#64748b" />
+      <stop offset="75%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+
+    <!-- Neon Green Plaque Border Gradient -->
+    <linearGradient id="neonGreenBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="25%" stop-color="#22c55e" />
+      <stop offset="50%" stop-color="#4ade80" />
+      <stop offset="75%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+
+    <!-- TIRE CENTER Glowing Text Gradient -->
+    <linearGradient id="greenTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bbf7d0" />
+      <stop offset="40%" stop-color="#4ade80" />
+      <stop offset="80%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+
+    <!-- Outer Glow & Drop Shadow -->
+    <filter id="plaqueShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.9" />
+    </filter>
+  </defs>
+
+  <g id="LogoRoot">
+    <!-- 1. TIRE PROFILE (Circular outer black rubber with deep treads) -->
+    <g id="Tire">
+      <!-- Main Tire Outer Disc -->
+      <circle cx="500" cy="460" r="370" fill="url(#tireBody)" stroke="#06080a" stroke-width="14" />
+
+      <!-- Outer Tread Blocks (Angled notches around circumference) -->
+      <!-- Top Arc Tread Lugs -->
+      <g stroke="#090b0e" stroke-width="9" stroke-linecap="round">
+        <line x1="500" y1="90" x2="500" y2="145" />
+        <line x1="450" y1="96" x2="458" y2="150" />
+        <line x1="550" y1="96" x2="542" y2="150" />
+        <line x1="402" y1="112" x2="418" y2="164" />
+        <line x1="598" y1="112" x2="582" y2="164" />
+        <line x1="358" y1="136" x2="382" y2="182" />
+        <line x1="642" y1="136" x2="618" y2="182" />
+        <line x1="318" y1="168" x2="348" y2="210" />
+        <line x1="682" y1="168" x2="652" y2="210" />
+        <line x1="284" y1="208" x2="322" y2="242" />
+        <line x1="716" y1="208" x2="678" y2="242" />
+        <line x1="256" y1="254" x2="298" y2="280" />
+        <line x1="744" y1="254" x2="702" y2="280" />
+        <line x1="234" y1="305" x2="282" y2="322" />
+        <line x1="766" y1="305" x2="718" y2="322" />
+        <line x1="220" y1="360" x2="272" y2="368" />
+        <line x1="780" y1="360" x2="728" y2="368" />
+        <line x1="214" y1="418" x2="268" y2="418" />
+        <line x1="786" y1="418" x2="732" y2="418" />
+
+        <!-- Lower Tire Arc (Visible below badge) -->
+        <line x1="248" y1="675" x2="290" y2="650" />
+        <line x1="752" y1="675" x2="710" y2="650" />
+        <line x1="280" y1="720" x2="318" y2="686" />
+        <line x1="720" y1="720" x2="682" y2="686" />
+        <line x1="320" y1="760" x2="350" y2="718" />
+        <line x1="680" y1="760" x2="650" y2="718" />
+        <line x1="365" y1="792" x2="388" y2="745" />
+        <line x1="635" y1="792" x2="612" y2="745" />
+        <line x1="415" y1="812" x2="430" y2="762" />
+        <line x1="585" y1="812" x2="570" y2="762" />
+        <line x1="468" y1="824" x2="475" y2="772" />
+        <line x1="532" y1="824" x2="525" y2="772" />
+        <line x1="500" y1="828" x2="500" y2="775" />
+      </g>
+
+      <!-- Sidewall Concentric Grooves -->
+      <circle cx="500" cy="460" r="340" fill="none" stroke="#222731" stroke-width="7" />
+      <circle cx="500" cy="460" r="328" fill="none" stroke="#12151c" stroke-width="4" />
+      <circle cx="500" cy="460" r="280" fill="none" stroke="#292f3b" stroke-width="12" />
+      <circle cx="500" cy="460" r="268" fill="none" stroke="#101318" stroke-width="3" />
+    </g>
+
+    <!-- 2. WHEEL RIM (Visible in lower apex under the badge) -->
+    <g id="LowerRim">
+      <!-- Chrome Wheel Lip -->
+      <circle cx="500" cy="460" r="232" fill="none" stroke="url(#chromeWheel)" stroke-width="16" />
+      <circle cx="500" cy="460" r="220" fill="none" stroke="#0f172a" stroke-width="5" />
+      <circle cx="500" cy="460" r="212" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.85" />
+      <circle cx="500" cy="460" r="204" fill="none" stroke="url(#chromeWheel)" stroke-width="8" />
+    </g>
+
+    <!-- 3. INNER HUB (Dark Sky, Winding Green Highway, Leaf) -->
+    <g id="InnerHub">
+      <!-- Dark Hub Backing -->
+      <circle cx="500" cy="460" r="200" fill="#080c09" />
+      <!-- Subtle Ambient Green Glow -->
+      <circle cx="500" cy="460" r="198" fill="none" stroke="#064e3b" stroke-width="12" opacity="0.6" />
+
+      <!-- Winding Green Road (starts at right, sweeps down-left and curves up to top-left) -->
+      <path
+        d="M 680 405 C 640 345, 550 315, 470 332 C 375 352, 325 318, 270 252 L 298 230 C 358 295, 412 322, 490 302 C 576 282, 664 322, 702 395 Z"
+        fill="#042f2e"
+      />
+      <path
+        d="M 675 402 C 636 348, 552 319, 473 336 C 380 356, 330 322, 277 256 L 293 236 C 351 301, 408 328, 486 308 C 572 288, 658 328, 695 393 Z"
+        fill="url(#roadGreen)"
+        stroke="#22c55e"
+        stroke-width="2.5"
+      />
+
+      <!-- Dashed White Center Lane Divider -->
+      <path
+        d="M 685 398 C 645 348, 565 321, 482 321 C 395 323, 340 292, 285 246"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-dasharray="24 16"
+        opacity="0.95"
+      />
+
+      <!-- Eco Leaf (Top Right at 2 o'clock above badge) -->
+      <g id="Leaf" transform="translate(665, 225)">
+        <!-- Stem -->
+        <path d="M 12 130 C 10 105, 18 80, 32 58" fill="none" stroke="#15803d" stroke-width="6" stroke-linecap="round" />
+        <!-- Leaf Blade -->
+        <path
+          d="M 28 62 C 20 18, 75 -18, 120 -28 C 130 26, 95 82, 38 100 C 30 88, 28 75, 28 62 Z"
+          fill="url(#leafGrad)"
+          stroke="#4ade80"
+          stroke-width="4.5"
+          stroke-linejoin="round"
+        />
+        <!-- Main Vein -->
+        <path d="M 32 86 C 54 58, 84 22, 116 -24" fill="none" stroke="#bbf7d0" stroke-width="3.5" stroke-linecap="round" />
+        <!-- Side Veins -->
+        <path d="M 50 66 C 66 58, 82 60, 96 68" fill="none" stroke="#86efac" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+        <path d="M 66 45 C 82 35, 98 35, 110 42" fill="none" stroke="#86efac" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+        <path d="M 82 22 C 94 10, 108 8, 116 12" fill="none" stroke="#86efac" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+      </g>
+    </g>
+
+    <!-- 4. CENTER ANGLED BRAND BADGE / PLAQUE -->
+    <!-- Tilted by -3.2 degrees around center (500, 510) exactly matching PTC Logo.png -->
+    <g id="MainPlaque" transform="translate(500, 510) rotate(-3.2) translate(-500, -510)" filter="url(#plaqueShadow)">
+      <!-- Outer Bright Neon Green Frame -->
+      <polygon
+        points="20,412 980,412 935,568 812,568 782,670 218,670 188,568 65,568"
+        fill="url(#neonGreenBorder)"
+        stroke="#4ade80"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+
+      <!-- Solid Black Obsidian Plate -->
+      <polygon
+        points="32,420 968,420 925,560 804,560 774,660 226,660 196,560 75,560"
+        fill="#05070a"
+        stroke="#000000"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+
+      <!-- Upper Sheen Reflection on Plate -->
+      <polygon
+        points="42,426 958,426 935,490 62,490"
+        fill="#334155"
+        opacity="0.22"
+      />
+
+      <!-- PROSPERITY BRAND TYPOGRAPHY (Aggressive 3D Chrome Italic) -->
+      <g transform="translate(500, 515) skewX(-11)">
+        <!-- Heavy Black Cast Shadow -->
+        <text
+          x="0"
+          y="10"
+          text-anchor="middle"
+          fill="#000000"
+          stroke="#000000"
+          stroke-width="16"
+          stroke-linejoin="round"
+          font-family="system-ui, -apple-system, 'Impact', 'Arial Black', sans-serif"
+          font-weight="900"
+          font-size="112"
+          letter-spacing="5"
+        >
+          PROSPERITY
+        </text>
+
+        <!-- Solid Black Outline / Bevel -->
+        <text
+          x="0"
+          y="0"
+          text-anchor="middle"
+          fill="#000000"
+          stroke="#05080c"
+          stroke-width="12"
+          stroke-linejoin="round"
+          font-family="system-ui, -apple-system, 'Impact', 'Arial Black', sans-serif"
+          font-weight="900"
+          font-size="112"
+          letter-spacing="5"
+        >
+          PROSPERITY
+        </text>
+
+        <!-- Specular White Rim Highlight -->
+        <text
+          x="0"
+          y="0"
+          text-anchor="middle"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="4"
+          stroke-linejoin="round"
+          font-family="system-ui, -apple-system, 'Impact', 'Arial Black', sans-serif"
+          font-weight="900"
+          font-size="112"
+          letter-spacing="5"
+        >
+          PROSPERITY
+        </text>
+
+        <!-- 3D Chrome Horizon Metallic Core -->
+        <text
+          x="0"
+          y="0"
+          text-anchor="middle"
+          fill="url(#chromeHorizon)"
+          font-family="system-ui, -apple-system, 'Impact', 'Arial Black', sans-serif"
+          font-weight="900"
+          font-size="112"
+          letter-spacing="5"
+        >
+          PROSPERITY
+        </text>
+      </g>
+
+      <!-- LOWER SUB-SECTION: "TIRE CENTER" (Vivid Glowing Neon Green) -->
+      <g transform="translate(500, 628) skewX(-11)">
+        <!-- Black Drop Shadow -->
+        <text
+          x="0"
+          y="5"
+          text-anchor="middle"
+          fill="#000000"
+          stroke="#000000"
+          stroke-width="9"
+          stroke-linejoin="round"
+          font-family="system-ui, -apple-system, 'Arial Black', sans-serif"
+          font-weight="900"
+          font-size="52"
+          letter-spacing="9"
+        >
+          TIRE CENTER
+        </text>
+
+        <!-- Glowing Neon Green Core -->
+        <text
+          x="0"
+          y="0"
+          text-anchor="middle"
+          fill="url(#greenTextGrad)"
+          stroke="#14532d"
+          stroke-width="2.5"
+          stroke-linejoin="round"
+          font-family="system-ui, -apple-system, 'Arial Black', sans-serif"
+          font-weight="900"
+          font-size="52"
+          letter-spacing="9"
+        >
+          TIRE CENTER
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Phone, QrCode, MapPin, CheckCircle2, RotateCw, ExternalLink, Wrench, Shield, Award, Fuel } from 'lucide-react';
 import { Language } from '../types';
 import { LOCATIONS } from '../data/websiteData';
+import { ProsperityLogo } from './ProsperityLogo';
+import flyerImg from '../assets/images/prosperity_brand_flyer_1791972077350.jpg';
 
 interface BrandShowcaseProps {
   language: Language;
@@ -42,7 +44,7 @@ export const BrandShowcase: React.FC<BrandShowcaseProps> = ({
         {/* Feature Banner: Official Commercial Flyer Graphic */}
         <div className="relative rounded-3xl overflow-hidden border-2 border-emerald-500/50 shadow-2xl group">
           <img
-            src="/src/assets/images/prosperity_brand_flyer_1791972077350.jpg"
+            src={flyerImg}
             alt="Prosperity Tire Center Official Driver Promotions & Service Offers"
             className="w-full h-auto object-cover max-h-[500px]"
             referrerPolicy="no-referrer"
@@ -91,14 +93,9 @@ export const BrandShowcase: React.FC<BrandShowcaseProps> = ({
                   {/* Subtle card lighting edge */}
                   <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
 
-                  {/* Logo lockup */}
-                  <div className="flex items-center justify-center gap-4">
-                    <img
-                      src="/src/assets/images/prosperity_tire_logo_1791972075979.jpg"
-                      alt="Prosperity Tire Center"
-                      className="w-24 h-24 sm:w-28 sm:h-28 object-contain rounded-xl drop-shadow-[0_0_15px_rgba(34,197,94,0.5)]"
-                      referrerPolicy="no-referrer"
-                    />
+                  {/* Logo lockup with transparent vector logo */}
+                  <div className="flex items-center justify-center">
+                    <ProsperityLogo size="lg" />
                   </div>
 
                   {/* Hexagon Services Badges */}
